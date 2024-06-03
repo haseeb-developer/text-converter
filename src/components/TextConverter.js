@@ -103,7 +103,7 @@ const TextConverter = () => {
           onChange={handleTextChange}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group mt-3">
         <label htmlFor="convertOption">Choose conversion:</label>
         <select
           id="convertOption"
@@ -124,20 +124,22 @@ const TextConverter = () => {
           <option value="Reverse Text">Reverse Text</option>
         </select>
       </div>
-      <button className="btn btn-primary mt-3" onClick={handleConvert}>
-        Convert
-      </button>
-      <button
-        className="btn btn-secondary mt-3 ms-3"
-        onClick={() => setDarkMode(!darkMode)}
-      >
-        Toggle Dark Mode
-      </button>
+      <div className="d-flex">
+        <button className="btn btn-primary mt-3" onClick={handleConvert}>
+          Convert
+        </button>
+        <button
+          className="btn btn-secondary mt-3 ms-3"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          Toggle Dark Mode
+        </button>
+      </div>
       {output && (
         <div className="mt-4">
           <h2>Output:</h2>
           <div
-            className="output-box alert alert-secondary d-flex align-items-center justify-content-between"
+            className="output-box alert alert-secondary d-flex align-items-center justify-content-end"
             role="alert"
           >
             <span className="output-text">{output}</span>
