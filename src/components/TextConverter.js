@@ -53,6 +53,28 @@ const TextConverter = () => {
           )
           .join("");
         break;
+      case "Count Characters":
+        convertedText = text.length.toString();
+        break;
+      case "Count Words":
+        convertedText = text
+          .split(/\s+/)
+          .filter((word) => word !== "")
+          .length.toString();
+        break;
+      case "Find and Replace":
+        // Implement find and replace functionality
+        // You can prompt the user for the string to find and the replacement string
+        break;
+      case "Sort Text":
+        convertedText = text.split("").sort().join("");
+        break;
+      case "Remove Whitespace":
+        convertedText = text.replace(/\s+/g, "");
+        break;
+      case "Reverse Text":
+        convertedText = text.split("").reverse().join("");
+        break;
       default:
         convertedText = text;
         break;
@@ -94,6 +116,12 @@ const TextConverter = () => {
           <option value="All lower">All lower</option>
           <option value="Capitalize">Capitalize every word first letter</option>
           <option value="Up and Down">Up and Down text</option>
+          <option value="Count Characters">Count Characters</option>
+          <option value="Count Words">Count Words</option>
+          <option value="Find and Replace">Find and Replace</option>
+          <option value="Sort Text">Sort Text</option>
+          <option value="Remove Whitespace">Remove Whitespace</option>
+          <option value="Reverse Text">Reverse Text</option>
         </select>
       </div>
       <button className="btn btn-primary mt-3" onClick={handleConvert}>
